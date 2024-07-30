@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Input from "../components/Input";
 import Card from "../components/Card";
-const api = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=e9b42b817f034ce8930a83883566d9db&pageSize=10";
+const api = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=e9b42b817f034ce8930a83883566d9db&pageSize=12";
 const Home = () => {
   const [data, setData] = useState(undefined);
   useEffect(() => {
@@ -17,7 +17,7 @@ const Home = () => {
   const submit = async (e) => {
     e.preventDefault();
     const input = e.target[0].value;
-    const data = await fetch(`https://newsapi.org/v2/everything?q=${input}&apiKey=e9b42b817f034ce8930a83883566d9db&pageSize=10`);
+    const data = await fetch(`https://newsapi.org/v2/everything?q=${input}&apiKey=e9b42b817f034ce8930a83883566d9db&pageSize=12`);
     const hasil = await data.json();
     setData(hasil);
   };
